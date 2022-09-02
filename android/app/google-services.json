@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "382406243601",
+    "project_id": "login-firebase-ec1ca",
+    "storage_bucket": "login-firebase-ec1ca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382406243601:android:2153fdec0ab6cd997308b0",
+        "android_client_info": {
+          "package_name": "br.com.marciano.firebase_login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "382406243601-dfigtmhtruekoshlp812loddrpo2iskl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDR7XdyGLPh6mVFBm2WCU_FU5rQ8jLU410"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "382406243601-dfigtmhtruekoshlp812loddrpo2iskl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
