@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 import 'firebase_options.dart';
+import 'presentation/routes/routes.dart';
 
 void main() async {
   await Firebase.initializeApp(
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      initialRoute: Routes.LOGIN,
     );
   }
 }
