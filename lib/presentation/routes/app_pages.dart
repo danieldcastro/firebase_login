@@ -7,6 +7,10 @@ import 'routes.dart';
 class AppPages {
   static List<GetPage> pages = [
     GetPage(
+        name: Routes.INITIAL,
+        page: () => const InitialPage(),
+        binding: InitialPageBinding()),
+    GetPage(
         name: Routes.LOGIN,
         page: () => const LoginPage(),
         binding: LoginBinding()),
