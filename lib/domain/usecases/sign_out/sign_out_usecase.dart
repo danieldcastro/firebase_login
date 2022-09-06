@@ -1,7 +1,7 @@
 import 'package:either_dart/either.dart';
 
-import '../../entities/user_entity.dart';
+import '../../../infrastructure/errors/auth_exception.dart';
 
 abstract class SignOutUsecase {
-  Future<Either<Exception, UserEntity>> call();
+  Future<Either<AuthException, void>> call();
 }

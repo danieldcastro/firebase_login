@@ -13,17 +13,20 @@ class DatasourceImpl implements Datasource {
 
   @override
   Future<Either<AuthException, AuthResponse>>
-      createUserWithNameAndCpfAndPassword(
-          {required String cpfNumber,
+      createUserWithNameAndEmailAndPassword(
+          {required String email,
           required String password,
           required String userName}) async {
     try {
-      final credential = await _authRequest.createUserWithNameAndCpfAndPassword(
-          cpfNumber: cpfNumber, password: password, userName: userName);
+      final credential =
+          await _authRequest.createUserWithNameAndEmailAndPassword(
+              email: email, password: password, userName: userName);
       return Right(credential);
     } on MyFirebaseAuthException catch (e) {
       return Left(
           AuthException(message: e.message ?? 'Create user unsuccessful'));
+    } catch (e) {
+      return Left(AuthException(message: e.toString().split(']').last));
     }
   }
 
@@ -34,18 +37,22 @@ class DatasourceImpl implements Datasource {
       return Right(user);
     } on MyFirebaseAuthException catch (e) {
       return Left(AuthException(message: e.message ?? 'user logged not found'));
+    } catch (e) {
+      return Left(AuthException(message: e.toString().split(']').last));
     }
   }
 
   @override
-  Future<Either<AuthException, AuthResponse>> signInWithCpfAndPassword(
-      {required String cpfNumber, required String password}) async {
+  Future<Either<AuthException, AuthResponse>> signInWithEmailAndPassword(
+      {required String email, required String password}) async {
     try {
-      final credential = await _authRequest.signInWithCpfAndPassword(
-          cpfNumber: cpfNumber, password: password);
+      final credential = await _authRequest.signInWithEmailAndPassword(
+          email: email, password: password);
       return Right(credential);
     } on MyFirebaseAuthException catch (e) {
       return Left(AuthException(message: e.message ?? 'Sign in unsuccessful'));
+    } catch (e) {
+      return Left(AuthException(message: e.toString().split(']').last));
     }
   }
 
@@ -55,6 +62,8 @@ class DatasourceImpl implements Datasource {
       return Right(await _authRequest.signOut());
     } on MyFirebaseAuthException catch (e) {
       return Left(AuthException(message: e.message ?? 'Sign out unsuccessful'));
+    } catch (e) {
+      return Left(AuthException(message: e.toString().split(']').last));
     }
   }
 }

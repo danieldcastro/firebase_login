@@ -15,17 +15,17 @@ class FirebaseAuthImpl implements AuthRequest {
   }
 
   @override
-  Future<AuthResponse> createUserWithNameAndCpfAndPassword(
-      {required String cpfNumber,
+  Future<AuthResponse> createUserWithNameAndEmailAndPassword(
+      {required String email,
       required String password,
       required String userName}) async {
     final credential = await _auth.createUserWithEmailAndPassword(
-        email: cpfNumber, password: password);
+        email: email, password: password);
 
     await credential.user?.updateDisplayName(userName);
     _logs(
       auth: _auth,
-      method: 'Create User With Cpf And Password',
+      method: 'Create User With Email And Password',
     );
     return AuthResponse(data: credential);
   }
@@ -36,13 +36,13 @@ class FirebaseAuthImpl implements AuthRequest {
   }
 
   @override
-  Future<AuthResponse> signInWithCpfAndPassword(
-      {required String cpfNumber, required String password}) async {
+  Future<AuthResponse> signInWithEmailAndPassword(
+      {required String email, required String password}) async {
     final credential = await _auth.signInWithEmailAndPassword(
-        email: cpfNumber, password: password);
+        email: email, password: password);
     _logs(
       auth: _auth,
-      method: 'Sign In With Cpf And Password',
+      method: 'Sign In With Email And Password',
     );
     return AuthResponse(data: credential);
   }
@@ -56,11 +56,11 @@ class FirebaseAuthImpl implements AuthRequest {
   @override
   AuthResponse getLoggedUser() {
     final user = _auth.currentUser;
-    _logs(auth: _auth, method: 'Get Logged User');
+    _logs(auth: _auth.currentUser ?? 'Null user', method: 'Get Logged User');
     return AuthResponse(data: user);
   }
 
-  void _logs({required FirebaseAuth auth, required String method}) {
+  void _logs({required dynamic auth, required String method}) {
     _logger.info('############### $method ###############');
     _logger.info('FIREBASE AUTH: $auth');
     _logger.info('######################################');
