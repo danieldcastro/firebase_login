@@ -1,16 +1,21 @@
-# firebase_login
+# Firebase Login
+Um aplicativo teste para autenticação com Firebase.
 
-A new Flutter project.
+## Bora dar uma clonada? :computer:
 
-## Getting Started
+Obs.: Certifique-se de ter o Flutter 3.0 ou superior instalado, caso não esteja, execute:
 
-This project is a starting point for a Flutter application.
+```
+flutter upgrade
+```
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Com Flutter atualizado execute:
+```
+git clone https://github.com/danieldcastro/firebase_login
+cd firebase_login
+flutter pub get
+flutter run
+```
+<a href="https://twitter.com/odanielmarciano" target="_blank"><img height="20" src="https://img.shields.io/badge/-@odanielmarciano-1ca0f1?style=flat-square&amp;labelColor=1ca0f1&amp;logo=twitter&amp;logoColor=white&amp;link=https://twitter.com/odanielmarciano"></a>
+<a href="https://www.linkedin.com/in/danieldecastromarciano/" target="_blank"><img height="20" src="https://img.shields.io/badge/-Daniel-blue?style=flat-square&amp;logo=Linkedin&amp;logoColor=white&amp;link=https://www.linkedin.com/in/danieldecastromarciano/"></a>
+<a href="mailto:odanielmarciano@gmail.com" target="_blank"><img height="20" src="https://img.shields.io/badge/-odanielmarciano@gmail.com-c14438?style=flat-square&amp;logo=Gmail&amp;logoColor=white&amp;link=mailto:odanielmarciano@gmail.com"></a>
